@@ -1,0 +1,14 @@
+modules = ["python-3.12"]
+
+run = "pip install -q flask pandas openpyxl && python3 app.py"
+
+[nix]
+channel = "stable-25_05"
+packages = ["glibcLocales"]
+
+[deployment]
+run = ["sh", "-c", "pip install -q flask pandas openpyxl && python3 app.py"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
